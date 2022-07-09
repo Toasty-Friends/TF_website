@@ -80,7 +80,7 @@ header {
 }
 
 #link1{
-  background-image: url(/Images/SpaceToast.jpg);
+  background-image: url(../Images/SpaceToast.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -139,7 +139,7 @@ header {
   margin-bottom: 20px;
 }
 
-.minting-box {
+/* .minting-box {
   background-color: var(--minting-box-color) !important;
   color: var(--minting-box-text-color) !important;
   border-style: solid;
@@ -149,7 +149,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   color: #000000;
-}
+} */
 
 .minting-box h5 {
   color: var(--minting-box-heading-color);
