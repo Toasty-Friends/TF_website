@@ -11,7 +11,7 @@ export default class extends Component {
     <div className="team-grid">
       <div className="team">
         <div className="about-img">
-          <img src="Images/toastr.jpg" />
+          <img src="styles/images/toastr.jpg" />
         </div>
         <div className="about-me">
           <h3>The Lost Toastr</h3>
@@ -21,7 +21,7 @@ export default class extends Component {
 
       <div className="team">
         <div className="about-img">
-          <img src="Images/Dem.jpg" />
+          <img src="styles/images/Dem.jpg" />
         </div>
         <div className="about-me">
           <h3>Dementez</h3>
@@ -41,7 +41,7 @@ export default class extends Component {
 
       <div className="team">
         <div className="about-img">
-          <img src="Images/IDK.png" />
+          <img src="styles/images/IDK.png" />
         </div>
         <div className="about-me">
           <h3>Who's Next?</h3>
