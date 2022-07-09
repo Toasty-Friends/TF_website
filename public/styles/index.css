@@ -80,7 +80,7 @@ header {
 }
 
 #link1{
-  background-image: url(../Images/SpaceToast.jpg);
+  background-image: url(./Images/SpaceToast.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -326,7 +326,7 @@ footer p {
 
 @font-face {
   font-family: Plump;
-  src: url(../Fonts/Plumpfull.ttf);
+  src: url(./Fonts/Plumpfull.ttf);
 }
 
 .mainBanner {
