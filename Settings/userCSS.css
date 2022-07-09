@@ -1,0 +1,21 @@
+:root {
+
+
+  /* Minting Area */
+  --minting-box-color: #ba610a;
+  --minting-box-heading-color: white;
+  --minting-box-info-box-color: #ba610a;
+  --minting-box-text-color: rgb(255, 255, 255);
+
+
+  /* Minting Button */
+  --minting-button-color: linear-gradient(180deg,#5e36b4 40%,#1893c7 100%);
+  --minting-button-text-color: rgb(0, 0, 0);
+
+}
+
+
+
+
+
+
