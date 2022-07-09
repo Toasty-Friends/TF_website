@@ -9,7 +9,7 @@ export default class extends Component {
         <body>
           <div className="mainpage">
             <img
-              src="/images/BasementParty.jpg"
+              src="styles/images/BasementParty.jpg"
               alt="Toasty Friends Clubhouse"
               className="mainBanner"
             />
