@@ -23,7 +23,7 @@ const Header = () => {
               <Link href="/">
                 <a>
                   <Image
-                    src="/images/ToastyLogo.jpg"
+                    src="styles/images/ToastyLogo.jpg"
                     alt="logo"
                     layout="fill"
                     objectFit="cover"
