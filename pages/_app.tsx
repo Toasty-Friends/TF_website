@@ -4,6 +4,9 @@ import "../public/styles/tfstyle.css";
 import Appbar from "../Components/Appbar"
 import Footer from "../Components/FooterSoc";
 import Head from "../node_modules/next/head";
+import { config } from '../node_modules/@fortawesome/fontawesome-svg-core';
+import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 
 export default function MyApp({Component,pageProps}) {
