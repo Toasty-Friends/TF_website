@@ -19,7 +19,7 @@ export default class extends Component {
               community. We aim for complete transparency, by showing our
               actions during each step of our journey. The goal is to bring 
               together like-minded individuals and help each other. To do this 
-              we our building: 
+              we our building:
               <br />
               <br />
               • Floor Price Tracker
