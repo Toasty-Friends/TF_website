@@ -5,18 +5,18 @@ const Footer = () => {
     <div>
       <footer>
         <div className="footer-links">
-          <a href="https://discord.gg/ajg58uWRDN">
+          <a href="https://discord.gg/EvCeZ3grnf">
           <FontAwesomeIcon icon={faDiscord} />
           </a>
           <a href="https://twitter.com/toasty_friends">
           <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href="https://www.instagram.com/toasty_friends/">
+          {/* <a href="https://www.instagram.com/toasty_friends/">
           <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="https://www.tiktok.com/@toasty_friends">
+          </a> */}
+          {/* <a href="https://www.tiktok.com/@toasty_friends">
             <FontAwesomeIcon icon={faTiktok} />
-          </a>
+          </a> */}
         </div>
         <p>2022 Toasty Friends&#169;</p>
       </footer>
