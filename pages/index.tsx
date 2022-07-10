@@ -13,7 +13,7 @@ export default class extends Component {
               alt="Toasty Friends Clubhouse"
               className="mainBanner"
             />
-            <h1>Welcome to Toasty Friends</h1>
+            <h1>Welcome to Toasty Friends  TEST</h1>
             <p>
               Here we are a project built by the community for the
               community. We aim for complete transparency, by showing our
