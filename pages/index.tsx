@@ -1,136 +1,61 @@
-import React, { Component } from "react";
-import Appbar from "../Components/Appbar"
+import Image from 'next/image'
+import Head from 'next/head'
 
-export default class extends Component {
-  render() {
-    return (
-      <>
-      
-        <body>
-          <div className="mainpage">
-            <img
-              src="styles/images/BasementParty.jpg"
-              alt="Toasty Friends Clubhouse"
-              className="mainBanner"
-            />
-            <h1>Welcome to Toasty Friends</h1>
-            <p>
-              Here we are a project built by the community for the
-              community. We aim for complete transparency, by showing our
-              actions during each step of our journey. The goal is to bring 
-              together like-minded individuals and help each other. To do this 
-              we our building:
-              <br />
-              <br />
-              • Floor Price Tracker
-              <br />
-              • Sale Volume Tracker
-              <br />
-              • Wallet Tracker (Whale, Collection, ETC.)
-              <br />
-              • More to be added...
-              <br />
-              <br />
-              We hope that you will join our Toasty Friends community and accompany
-              us on our journey of growth and success!
+// import profilePic from '../public/vercel.svg'
+import hero from '../public/evilsunny.png'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Toasty Friends</title>
+        <meta name='description' content='Solana Powerful Tools' />
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+      </Head>
+      <Header />
+      <main className=' mx-auto items-center flex min-h-screen flex-col justify-between bg-gradient-to-tl from-black via-gray-900 to-black text-sky-100'>
+        <section className='pt-16 text-sky-100'>
+        
+        <div className='grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12'>
+          <div className='mr-auto place-self-center lg:col-span-7'>
+            <h1 className='max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white'>
+              Powerful tool for solana NFT
+            </h1>
+            <p className='max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+              maxime ea odit sint culpa optio! Fugit accusamus repellendus
+              laboriosam, ipsum assumenda, ea animi illum quos voluptatem
+              inventore debitis enim quo.
             </p>
-            <br />
-            <br />
-            <div className="roadmap" id="Roadmap">
-              <br />
-              <br />
-              <h1>Roadmap</h1>
-              <div className="phase1">
-                <p>
-                  <br />
-                  1️⃣ PHASE 1
-                  <br />
-                  <br />
-                  1. Creation of Toasty Friends PFP
-                  <br />
-                  <br />
-                  2. DAO tool implementation in discord
-                  <br />
-                  <br />
-                  3. Launching the project to the public
-                  <br />
-                  - We will create a Toasty Friends community through social
-                  media, discord, and word to mouth
-                  <br />
-                  <br />
-                  4. Play mini games and challenges for winners to gain access
-                  to exclusive roles. Benefits will include:
-                  <br />
-                  - Pre-mint access to DAO tools
-                  <br />
-                  - Possible free mint tokens
-                  <br />
-                  <br />
-                  5. Finalize collection and set rarities
-                  <br />
-                  <br />
-                  6. Minting 4444 Toasty Friends on the Solana blockchain.
-                  <br />
-                  <br />
-                  7. Website with wallet connection &amp; smart contracts
-                  <br />
-                </p>
-                <br />
-              </div>
-              <div className="phase2">
-                <p>
-                  <br />
-                  2️⃣ PHASE 2
-                  <br />
-                  <br />
-                  8. Staking for $CRUMB released
-                  <br />
-                  <br />
-                  9. Clubhouse/Bot integration on website
-                  <br />
-                  <br />
-                  10. Expansion of DAO tools, in-house and bought
-                  <br />
-                  <br />
-                  11. Onboarding of a full time NFT caller
-                  <br />
-                  <br />
-                  12. Begin creation of Metaverse
-                  <br />
-                  <br />
-                  13. Integrate clubhouse/bot into Metaverse
-                  <br />
-                  <br />
-                  14. Early beta testing of Metaverse for Toasty Friends holders
-                </p>
-                <br />
-              </div>
-              <div className="phase3">
-                <p>
-                  <br />
-                  3️⃣ PHASE 3
-                  <br />
-                  <br />
-                  15. Full Metaverse reveal with roadmap and breakdown
-                  <br />
-                  <br />
-                  16. Seamless integration of benifits across Discord, Web, Mobile, and Metaverse
-                  <br />
-                  <br />
-                  17. Personal rooms released, and addition clubhouses for partnered projects
-                  <br />
-                  <br />
-                  18. Mini-game integration for Metaverse(FPS, Arcade, Trivia, ETC.)
-                </p>
-                <br />
-              </div>
-            </div>
+            <a
+              href='#'
+              className='inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900'
+            >
+              Roadmap
+            </a>
+            <a
+              href='#'
+              className='text-sky-100 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center hover:text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800'
+            >
+              Clubhouse
+            </a>
           </div>
-          {/* <button onClick={topFunction} id="topBtn" title="Go to top">
-            Return to Top
-          </button> */}
-        </body>
-      </>
-    );
-  }
+          <div className='hidden lg:mt-0 lg:col-span-5 lg:flex'>
+            <Image
+              src={hero}
+              alt='mockup'
+              width={400}
+              height={400}
+              className='rounded'
+            />
+          </div>
+        </div>
+        </section>
+        <Footer />
+      </main>
+      
+    </>
+  )
 }

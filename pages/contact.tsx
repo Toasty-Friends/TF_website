@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-export default function Team() {
+export default function Contact() {
   return (
     <>
       <Head>
@@ -16,9 +16,9 @@ export default function Team() {
       </Head>
       <Header />
       <main className=' mx-auto items-center flex min-h-screen flex-col justify-between bg-gradient-to-tl from-black via-gray-900 to-black text-sky-100'>
-        <div className='pt-16 text-sky-100'>
+        <section className='pt-16 text-sky-100'>
         <div>Contact</div>
-        </div>
+        </section>
         <Footer />
       </main>
       
