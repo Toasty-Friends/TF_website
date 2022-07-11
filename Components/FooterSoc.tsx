@@ -1,16 +1,35 @@
 import { FontAwesomeIcon } from "../node_modules/@fortawesome/react-fontawesome/index";
-import { faDiscord, faTiktok, faTwitter, faInstagram } from "../node_modules/@fortawesome/free-brands-svg-icons/index";
+import {
+  faDiscord,
+  faTiktok,
+  faTwitter,
+  faInstagram,
+} from "../node_modules/@fortawesome/free-brands-svg-icons/index";
+import Image from "../node_modules/next/image";
+
 const Footer = () => {
   return (
     <div>
       <footer>
+        As Seen On:
+      <a href="https://nftcalendar.io/event/toasty-friends-mint/">
+            <Image
+              src="/styles/images/nft-calendar-logo-500x500.png"
+              alt="logo"
+              layout="fixed"
+              width="55px"
+              height="55px"
+              className="nftCal"
+            />
+          </a>
         <div className="footer-links">
           <a href="https://discord.gg/EvCeZ3grnf">
-          <FontAwesomeIcon icon={faDiscord} />
+            <FontAwesomeIcon icon={faDiscord} />
           </a>
           <a href="https://twitter.com/toasty_friends">
-          <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
+          
           {/* <a href="https://www.instagram.com/toasty_friends/">
           <FontAwesomeIcon icon={faInstagram} />
           </a> */}
