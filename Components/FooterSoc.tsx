@@ -12,6 +12,8 @@ const Footer = () => {
     <div>
       <footer>
         As Seen On:
+        <br />
+        <br />
       <a href="https://nftcalendar.io/event/toasty-friends-mint/">
             <Image
               src="/styles/images/nft-calendar-logo-500x500.png"
@@ -19,6 +21,15 @@ const Footer = () => {
               layout="fixed"
               width="55px"
               height="55px"
+              className="nftCal"
+            />
+            <br/>
+            <Image
+              src="/styles/images/white logo V 350px.png"
+              alt="logo"
+              layout="fixed"
+              width="300px"
+              height="100px"
               className="nftCal"
             />
           </a>
