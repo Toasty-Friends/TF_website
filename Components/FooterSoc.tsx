@@ -23,6 +23,8 @@ const Footer = () => {
               height="55px"
               className="nftCal"
             />
+            </a>
+            <a href="https://nftartpedia.com/collections/toasty-friends-mint">
             <br/>
             <Image
               src="/styles/images/white logo V 350px.png"
