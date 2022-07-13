@@ -56,16 +56,18 @@ export default function Home() {
         </section>
         <section id='roadmap' className='min-h-screen w-11/12 mx-auto'>
           <div className='relative mt-36 border-4 border-gray-200 px-4 pt-6 md:px-8 md:pt-12 md:pb-4 rounded-lg mb-5'>
-            <h1 className="absolute -top-5 right-10 text-3xl bg-black px-1 ">ROADMAP</h1>
+            <h1 className="absolute -top-5 right-10 text-3xl bg-neutral-900 rounded px-1 ">ROADMAP</h1>
             <div className="flex -mx-1 mb-5">
                 <div className="w-1/2 px-1">
                     <button type="button"
                   onClick={() => setShowModal(true)}
-                  className=" w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800"
+                  className="group w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800"
                 >
                   <div className="h-24"></div>
-                  <h3 className="text-lg font-bold text-white leading-tight flex">PHASE 1</h3>
-                  
+                  <div className="flex flex-col md:flex-row">
+                  <h3 className="text-lg font-bold text-white leading-tight flex mr-2">PHASE 1</h3>
+                  <h3 className="text-lg font-bold text-neutral-600 leading-tight opacity-0 group-hover:opacity-100 hidden md:block">Click me!</h3>
+                  </div>
                 </button>
                 {showModal ? (
         <>
@@ -120,9 +122,12 @@ export default function Home() {
 
                 <button type="button"
                   onClick={() => setShowModale(true)}
-                  className=" w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800">
-                        <div className="h-32"></div>
-                        <h3 className="text-lg font-bold text-white leading-tight flex">PHASE 2</h3>
+                  className="group w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800">
+                  <div className="h-32"></div>
+                  <div className="flex flex-col md:flex-row">
+                  <h3 className="text-lg font-bold text-white leading-tight flex mr-2">PHASE 2</h3>
+                  <h3 className="text-lg font-bold text-neutral-600 leading-tight opacity-0 group-hover:opacity-100 hidden md:block">Click me!</h3>
+                  </div>
                 </button>
                 {showModale ? (
         <>
@@ -180,9 +185,12 @@ export default function Home() {
                 <div className="w-1/2 px-1">
                 <button type="button"
                   onClick={() => setShowModali(true)}
-                  className="w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800">
+                  className=" group w-full block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800">
                         <div className="h-32"></div>
-                        <h3 className="text-lg font-bold text-white leading-tight flex">PHASE 3</h3>
+                        <div className="flex flex-col md:flex-row">
+                  <h3 className="text-lg font-bold text-white leading-tight flex mr-2">PHASE 3</h3>
+                  <h3 className="text-lg font-bold text-neutral-600 leading-tight opacity-0 group-hover:opacity-100 hidden md:block">Click me!</h3>
+                  </div>
                 </button>
                 {showModali ? (
         <>
@@ -233,9 +241,9 @@ export default function Home() {
                 ) : null}
                     <button className="w-full group block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95 bg-gradient-to-br from-slate-800 to-blue-800">
                       <div className="h-24"></div>
-                      <div className="md:flex">
-                        <h3 className="text-lg font-bold text-white leading-tight flex mr-2">PHASE 4</h3>
-                        <h3 className="text-lg font-bold text-red-600 leading-tight flex opacity-0 group-hover:opacity-100">COMING SOON..</h3>
+                      <div className="flex flex-col md:flex-row">
+                        <h3 className="text-lg font-bold text-white leading-tight flex md:mr-2">PHASE 4</h3>
+                        <h3 className="text-lg font-bold text-red-600 leading-tight opacity-0 flex group-hover:opacity-100 -ml-4 md:-ml-0">COMING SOON..</h3>
                       </div>    
                     </button>
                 </div>
