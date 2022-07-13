@@ -17,7 +17,7 @@ export default function Team() {
       <main className='min-h-screen bg-gradient-to-tl from-black via-gray-900 to-black text-neutral-200'>
         <h1 className="text-center text-3xl font-bold pt-28 pb-8">Toasty Team</h1>
         <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-center items-center mb-5 text-center gap-4">
-          <div className="px-2 py-4 border-2 rounded-lg">
+          <div className="md:w-1/2 p-4 border-2 rounded-lg">
             <h1 className="mb-3 text-2xl font-semibold">The Lost Toastr</h1>
             <Image
               src={toaster}
@@ -30,7 +30,7 @@ export default function Team() {
             <p className='mb-2'>I am The Lost Toastr, or Josh wich ever you prefer. I am the lead developer and founder of Toasty Friends.</p>
             <p>I am a computer science major graduating with focus in game development. I have been into crypto since a young age and followed bitcoin since it was below $1000. Around 2018 i got back into it and watched the market climb from 3k to almost 70k! There is mine. </p>
           </div>
-          <div className="px-2 py-4 border-2 rounded-lg">
+          <div className="md:w-1/2 p-4 border-2 rounded-lg">
             <h1 className="mb-3 text-2xl font-semibold">Dementez</h1>
             <Image
               src={dementez}
