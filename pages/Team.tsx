@@ -1,86 +1,47 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 import Head from 'next/head'
-
-// import profilePic from '../public/vercel.svg'
-// import hero from '../public/evilsunny.png'
+import toaster from '../public/toastr.jpg'
+import dementez from '../public/dem.jpg'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import React from 'react';
 
 export default function Team() {
-  const [showModal, setShowModal] = React.useState(false);
   return (
     <>
       <Head>
-        <title>Toasty Friends</title>
+        <title>Team - Toasty Friends</title>
         <meta name='description' content='Solana Powerful Tools' />
-        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        <link rel='shortcut icon' href='favicon.png' type='image/x-icon' />
       </Head>
       <Header />
-      <main className=' mx-auto items-center flex min-h-screen flex-col justify-between bg-gradient-to-tl from-black via-gray-900 to-black text-sky-100'>
-        <div className='pt-32 text-sky-100'>
-        <button
-        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Open regular modal
-      </button>
-      {showModal ? (
-        <>
-          <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-            onClick={() => setShowModal(false)}>
-            <div className="relative w-auto my-6 mx-auto max-w-3xl" >
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">
-                    Modal Title
-                  </h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      ×
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    I always felt like I could do anything. That’s the main
-                    thing people are controlled by! Thoughts- their perception
-                    of themselves! They're slowed down by their perception of
-                    themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
-                  </p>
-                </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Close
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Save Changes
-                  </button>
-                </div>
-              </div>
-            </div>
+      <main className='min-h-screen bg-gradient-to-tl from-black via-gray-900 to-black text-neutral-200'>
+        <h1 className="text-center text-3xl font-bold pt-28 pb-8">Toasty Team</h1>
+        <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-center items-center mb-5 text-center gap-4">
+          <div className="px-2 py-4 border-2 rounded-lg">
+            <h1 className="mb-3 text-2xl font-semibold">The Lost Toastr</h1>
+            <Image
+              src={toaster}
+              alt='toaster founder'
+              width={300}
+              height={300}
+              className='rounded'
+            />
+            <p className='mb-2'>Hello Toasty Fam,</p>
+            <p className='mb-2'>I am The Lost Toastr, or Josh wich ever you prefer. I am the lead developer and founder of Toasty Friends.</p>
+            <p>I am a computer science major graduating with focus in game development. I have been into crypto since a young age and followed bitcoin since it was below $1000. Around 2018 i got back into it and watched the market climb from 3k to almost 70k! There is mine. </p>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
+          <div className="px-2 py-4 border-2 rounded-lg">
+            <h1 className="mb-3 text-2xl font-semibold">Dementez</h1>
+            <Image
+              src={dementez}
+              alt='toaster marketing'
+              width={300}
+              height={300}
+              className='rounded'
+            />
+            <p className='mb-2'>Greeting Toasty Fam, I am Christian Cuevas</p>
+            <p>I am 36 years old and reside in Orlando, Florida. Past experience includes management, marketing and hospitality as a corporate veterinary HM. Currently working on Toast Friends and 3a Investments. Looking to create and be a part if community driven project. Pass times includes gaming with my kids and enjoying the Florida outdoors with my family. Have been in Defi space for about 3 years. Specifically SOL NFT space for over a year. </p>
+          </div>
         </div>
         <Footer />
       </main>
