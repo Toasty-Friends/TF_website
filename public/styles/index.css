@@ -274,7 +274,7 @@ header {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .topnav a:not(.logo-image){
     display: none;
   }
@@ -299,7 +299,7 @@ header {
     text-align: left;
     top: 0px;
   }
-}
+} */
 
 /* footer */
 footer {
