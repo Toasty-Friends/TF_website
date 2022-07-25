@@ -28,6 +28,8 @@ export default class extends Component {
               <br />
               • Wallet Tracker (Whale, Collection, ETC.)
               <br />
+              • Global Paperhand tracker
+              <br />
               • More to be added...
               <br />
               <br />
@@ -69,7 +71,7 @@ export default class extends Component {
                   5. Finalize collection and set rarities
                   <br />
                   <br />
-                  6. Minting 4444 Toasty Friends on the Solana blockchain.
+                  6. Minting 555 Toasty Friends on the Solana blockchain.
                   <br />
                   <br />
                   7. Website with wallet connection &amp; smart contracts

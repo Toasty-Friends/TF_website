@@ -312,19 +312,20 @@ footer p {
 }
 
 .phase3 {
-  background-image: null;
+  background-image: url(./images/moon.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  color: white;
+  color: #ba610a;
   text-align: left;
   border-radius: 25px;
   border: 3px solid #ba610a;
+  margin-bottom: 10px;
   margin-right: 25%;
-  /* background-color: rgba(0, 0, 0, 0.817); Tint color */
+  background-color: rgba(0, 0, 0, 0.800); /* Tint color */
   background-blend-mode: multiply;
   font-weight: 999;
-  font-family: monospace;
+  font-family: plumpfull;
 }
 .phase2 {
   background-image: null;
@@ -341,10 +342,10 @@ footer p {
   /* background-color: rgba(0, 0, 0, 0.817); Tint color */
   background-blend-mode: multiply;
   font-weight: 999;
-  font-family: monospace;
+  font-family: plumpfull;
 }
 .phase1 {
-  background-image: null;
+  background-image: url(./images/MintIMG.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -354,8 +355,8 @@ footer p {
   border: 3px solid #ba610a;
   margin-bottom: 10px;
   margin-right: 25%;
-  background-color: rgba(0, 0, 0, 0.817); /* Tint color */
+  background-color: rgba(0, 0, 0, 0.800); /* Tint color */
   background-blend-mode: multiply;
   font-weight: 999;
-  font-family: monospace;
+  font-family: plumpfull;
 }
