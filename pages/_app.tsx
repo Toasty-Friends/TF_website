@@ -1,17 +1,34 @@
-import * as React from 'react';
+import * as React from "react";
 import "../public/styles/index.css";
 import "../public/styles/tfstyle.css";
-import Appbar from "../Components/Appbar"
+import Appbar from "../Components/Appbar";
 import Footer from "../Components/FooterSoc";
+import { ThemeProvider } from "theme-ui";
+import Router, { AppProps } from "next/dist/shared/lib/router/router";
+import dynamic from "next/dynamic";
 import Head from "../node_modules/next/head";
-import { config } from '../node_modules/@fortawesome/fontawesome-svg-core';
-import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import "@solana/wallet-adapter-react-ui/styles.css";
+import withGA from "next-ga";
+import defaultTheme from "../styles/theme";
+import { config } from "../node_modules/@fortawesome/fontawesome-svg-core";
+import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
+const WalletProvider = dynamic(
+  () => import("../components/WalletProvider/WalletProvider"),
+  {
+    ssr: false,
+  }
+);
 
-export default function MyApp({Component,pageProps}) {
+function App(props: AppProps) {
+  const { Component, pageProps } = props;
+
+  // const [colorMode, setColorMode] = useColorMode()
+
   return (
     <>
+      {/* <ThemeProvider theme={defaultTheme}> */}
       <Head>
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <link
@@ -50,9 +67,16 @@ export default function MyApp({Component,pageProps}) {
         <meta charSet="UTF-8" />
         <title>Toasty Friends</title>
       </Head>
-      <Appbar /> 
-                <Component {...pageProps} />
-      <Footer/>
+      <Appbar />
+      <WalletProvider>
+        
+        <Component {...pageProps} />
+        
+      </WalletProvider>
+      <Footer />
+      {/* </ThemeProvider> */}
     </>
   );
 }
+
+export default withGA(process.env.NEXT_PUBLIC_GA_ID, Router)(App);

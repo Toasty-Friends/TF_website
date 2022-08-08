@@ -35,6 +35,8 @@ const Header = () => {
             <div className="nav-links">
               <Link href="/Team">Team</Link>
               <Link href={"/#Roadmap"}>Roadmap</Link>
+              <Link href={"/Staking"}>Stake</Link>
+
               {/* <Link href="/Clubhouse">Clubhouse</Link> */}
               {/* <a href="javascript:void(0)" className="icon" onClick={toggleMenu}>
               <i className="fa fa-bars"></i>
