@@ -30,7 +30,7 @@ function App(props: AppProps) {
   return (
     <>
       {/* <ThemeProvider theme={defaultTheme}> */}
-      {/* <Head>
+      <Head>
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -67,7 +67,7 @@ function App(props: AppProps) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta charSet="UTF-8" />
         <title>Toasty Friends</title>
-      </Head> */}
+      </Head>
       
       {/* <WalletProvider> */}
         <Appbar/>
