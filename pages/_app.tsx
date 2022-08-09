@@ -69,11 +69,11 @@ function App(props: AppProps) {
         <title>Toasty Friends</title>
       </Head> */}
       
-      <WalletProvider>
+      {/* <WalletProvider> */}
         <Appbar/>
         <Component {...Props} />
         <Footer/>
-      </WalletProvider>
+      {/* </WalletProvider> */}
       {/* </ThemeProvider> */}
     </>
   );
