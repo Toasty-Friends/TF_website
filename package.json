@@ -27,7 +27,7 @@
     "@solana/wallet-adapter-wallets": "^0.17.2",
     "next": "12.2.4",
     "next-ga": "^2.3.4",
-    "react": "18.3.0",
+    "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-tabs": "^4.2.0",
     "theme-ui": "^0.14.2"
