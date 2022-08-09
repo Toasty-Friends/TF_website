@@ -55,7 +55,7 @@ const CollectionItem = (props: Props) => {
           },
 
           "> img": {
-            opacity: 0.7,
+            opacity: 1,
           },
         },
       }}
@@ -63,7 +63,7 @@ const CollectionItem = (props: Props) => {
       onClick={handleOnClick(item)}
       onKeyDown={handleKeyDown(item)}
     >
-      <Button
+      {/* <Button
         tabIndex={1}
         variant="resetted"
         className="toggle-menu"
@@ -93,9 +93,9 @@ const CollectionItem = (props: Props) => {
             strokeWidth: "2",
           }}
         />
-      </Button>
+      </Button> */}
       {/** Dropdown */}
-      <Flex
+      {/* <Flex
         sx={{
           position: "absolute",
           visibility: isDropdownActive ? "visible" : "hidden",
@@ -134,14 +134,15 @@ const CollectionItem = (props: Props) => {
           View image
         </a>
         {additionalOptions || null}
-      </Flex>
+      </Flex> */}
       <img
         sx={{
           borderRadius: ".4rem",
           transition: "all .125s linear",
-          opacity: isDropdownActive ? 0.7 : 1,
+          opacity: isDropdownActive ? 1 : .3,
         }}
         src={externalMetadata.image}
+        alt="Collection Items"
       />
       <Text
         variant="small"

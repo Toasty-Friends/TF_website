@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class extends Component {
+export default class Team extends Component {
   render() {
     return (
     
@@ -11,7 +11,7 @@ export default class extends Component {
     <div className="team-grid">
       <div className="team">
         <div className="about-img">
-          <img src="styles/images/toastr.jpg" />
+          <img src="styles/images/toastr.jpg" alt="The Lost Toastr" />
         </div>
         <div className="about-me">
           <h3>The Lost Toastr</h3>
@@ -21,7 +21,7 @@ export default class extends Component {
 
       <div className="team">
         <div className="about-img">
-          <img src="styles/images/Dem.jpg" />
+          <img src="styles/images/Dem.jpg" alt="Dementez" />
         </div>
         <div className="about-me">
           <h3>Dementez</h3>
@@ -41,10 +41,10 @@ export default class extends Component {
 
       <div className="team">
         <div className="about-img">
-          <img src="styles/images/IDK.png" />
+          <img src="styles/images/IDK.png" alt="Who is next?" />
         </div>
         <div className="about-me">
-          <h3>Who's Next?</h3>
+          <h3>Who&apos;s Next?</h3>
           <p>Have a skill set? Reach out on Discord!</p>
         </div>
       </div>

@@ -1,14 +1,11 @@
 /** @jsxImportSource theme-ui */
 import { Flex, Text, Heading, Spinner, Button, Container } from "theme-ui"
-
-import CollectionItem from "../components/CollectionItem/CollectionItem"
+import CollectionItem from "../Components/CollectionItem/CollectionItem"
 import useGemFarmStaking from "../hooks/useGemFarmStaking"
 import { useWallet } from "@solana/wallet-adapter-react"
-// import { LoadingIcon } from "@/components/icons/LoadingIcon"
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import Header from "../components/Header/Header"
-import { LoadingIcon } from "../components/icons/LoadingIcon"
+import Header from "../Components/Header/Header"
+import { LoadingIcon } from "../Components/icons/LoadingIcon"
 import { useState } from "react"
 
 const StakePage = () => {
@@ -109,7 +106,7 @@ const StakePage = () => {
                       src="images/gemtransparent.gif"
                     /> */}
                     <Text>
-                      NFTs staked:&nbsp;
+                      NFT&#39;s staked:&nbsp;
                       {farmerAccount?.gemsStaked.toNumber()}
                     </Text>
                   </Flex>
@@ -270,7 +267,7 @@ const StakePage = () => {
                           }}
                           variant="small"
                         >
-                          Select NFTs to move them to your Vault.
+                          Select NFT&#39;s to move them to your Vault.
                         </Text>
                       ) : null}
                       <Text>
@@ -296,7 +293,7 @@ const StakePage = () => {
                         marginTop:"2em",
                       }}
                     >
-                      <Text>There are no Toasty Friends in this wallet :(</Text>
+                      <Text>There are no Toasty Friends in this wallet :&#40;</Text>
                     </Flex>
                   )
                 ) : /** No walletNFTs and public key, means it is loading */
@@ -391,7 +388,7 @@ const StakePage = () => {
                               }}
                               variant="small"
                             >
-                              Select NFTs to withdraw them to your wallet.
+                              Select NFT&#39;s to withdraw them to your wallet.
                             </Text>
                           ) : null}
 
@@ -418,7 +415,7 @@ const StakePage = () => {
                             marginTop:"2em",
                           }}
                         >
-                          <Text>There are no NFTs on your vault.</Text>
+                          <Text>There are no Toasty Friends in your vault.</Text>
                         </Flex>
                       )
                     ) : /** No vaultNFTs and public key, means it is loading */

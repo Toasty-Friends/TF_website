@@ -12,17 +12,18 @@ import withGA from "next-ga";
 import defaultTheme from "../styles/theme";
 import { config } from "../node_modules/@fortawesome/fontawesome-svg-core";
 import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 config.autoAddCss = false;
 
 const WalletProvider = dynamic(
-  () => import("../components/WalletProvider/WalletProvider"),
+  () => import("../Components/WalletProvider/WalletProvider"),
   {
     ssr: false,
   }
 );
 
 function App(props: AppProps) {
-  const { Component, pageProps } = props;
+  const { Component, Props } = props;
 
   // const [colorMode, setColorMode] = useColorMode()
 
@@ -63,17 +64,16 @@ function App(props: AppProps) {
         <meta name="msapplication-TileColor" content="#ba610a" />
         <meta name="theme-color" content="#000000" />
         <meta name="theme-color" content="#ffffff" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta charSet="UTF-8" />
         <title>Toasty Friends</title>
       </Head>
-      <Appbar />
+      
       <WalletProvider>
-        
-        <Component {...pageProps} />
-        
+        <Appbar/>
+        <Component {...Props} />
+        <Footer/>
       </WalletProvider>
-      <Footer />
       {/* </ThemeProvider> */}
     </>
   );

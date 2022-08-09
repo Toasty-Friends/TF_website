@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Appbar from "../Components/Appbar"
 
-export default class extends Component {
+export default class Index extends Component {
   render() {
     return (
       <>
