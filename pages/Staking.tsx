@@ -1,8 +1,11 @@
 /** @jsxImportSource theme-ui */
 import { Flex, Text, Heading, Spinner, Button, Container } from "theme-ui"
+
 import CollectionItem from "../Components/CollectionItem/CollectionItem"
 import useGemFarmStaking from "../hooks/useGemFarmStaking"
 import { useWallet } from "@solana/wallet-adapter-react"
+// import { LoadingIcon } from "@/components/icons/LoadingIcon"
+
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import Header from "../Components/Header/Header"
 import { LoadingIcon } from "../Components/icons/LoadingIcon"
