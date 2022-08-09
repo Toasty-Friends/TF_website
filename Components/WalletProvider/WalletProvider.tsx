@@ -19,12 +19,11 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui"
 import { clusterApiUrl } from "@solana/web3.js"
-import { ContainerProps } from "theme-ui"
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css")
 
-const Wallet = (props: ContainerProps) => {
+const Wallet = ({ children }: { children: React.ReactNode }) => {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = process.env
     .NEXT_PUBLIC_CONNECTION_NETWORK as WalletAdapterNetwork
@@ -62,7 +61,7 @@ const Wallet = (props: ContainerProps) => {
           {/* <WalletMultiButton />
           <WalletDisconnectButton /> */}
 
-          {props.children}
+          {children}
           {/* Your app's components go here, nested within the context providers. */}
         </WalletModalProvider>
       </WalletProvider>

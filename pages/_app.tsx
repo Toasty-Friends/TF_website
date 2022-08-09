@@ -15,12 +15,6 @@ import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 config.autoAddCss = false;
 
-const WalletProvider = dynamic(
-  () => import("../Components/WalletProvider/WalletProvider"),
-  {
-    ssr: false,
-  }
-);
 
 function App(props: AppProps) {
   const { Component, Props } = props;
@@ -68,12 +62,9 @@ function App(props: AppProps) {
         <meta charSet="UTF-8" />
         <title>Toasty Friends</title>
       </Head>
-      
-      {/* <WalletProvider> */}
         <Appbar/>
         <Component {...Props} />
         <Footer/>
-      {/* </WalletProvider> */}
       {/* </ThemeProvider> */}
     </>
   );
