@@ -48,6 +48,7 @@ const Wallet = ({ children }: { children: React.ReactNode }) => {
   //   ],
   //   [network]
   // )
+  const wallets = []
 
   return (
     <ConnectionProvider
