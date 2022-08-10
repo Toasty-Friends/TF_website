@@ -3,7 +3,7 @@ import { Flex, Text, Heading, Spinner, Button, Container } from "theme-ui"
 
 import CollectionItem from "../Components/CollectionItem/CollectionItem"
 import useGemFarmStaking from "../hooks/useGemFarmStaking"
-import { useWallet } from "@solana/wallet-adapter-react"
+import { useWallet } from "../node_modules/@solana/wallet-adapter-react"
 // import { LoadingIcon } from "@/components/icons/LoadingIcon"
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
@@ -38,20 +38,28 @@ const StakePage = () => {
 
   const { publicKey } = useWallet()
 
-  return (
+//   const timer = setTimeout(() => {
+//     handleRefreshRewardsButtonClick()
+//  }, 1000);
+
+
+return (
     <Container>
+      <br/>
       <div className="StakingHead">
       <Header farmId={farmId} setFarmId={setFarmId} />
       </div>
+      <br/>
       <div className="Staker">
-      <Flex
-        sx={{
-          flexDirection: "column",
-          marginTop: "3.2rem",
-          alignItems: "center",
-          padding: "0 1.6rem",
-        }}
-      >
+        <Flex sx={
+          {
+            flexDirection: "column",
+            marginTop: "3.2rem",
+            alignItems: "center",
+            padding: "0 .5rem"
+          }
+        }
+        >
         <Heading>Start staking your Toasty Friends!</Heading>
         <Text>(Because whats better with breakfest than steak)</Text>
 
@@ -173,7 +181,7 @@ const StakePage = () => {
                     Claim{" "}
                     
                     {availableA ? (
-                      <b>{(availableA / 1000000000).toFixed(2)}</b>
+                      <b>{(availableA / 1000000000).toFixed(9)}</b>
                     ) : (
                       0
                     )}
