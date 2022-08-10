@@ -32,7 +32,7 @@
       "@/hooks/*": [
         "hooks/*"
       ]
-    },
+    }
   },
   "include": [
     "next-env.d.ts",

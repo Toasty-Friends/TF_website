@@ -1,16 +1,15 @@
 /** @jsxImportSource theme-ui */
-import { Flex, Text, Heading, Spinner, Button, Container } from "../node_modules/theme-ui"
+import { Flex, Text, Heading, Spinner, Button, Container } from "theme-ui"
 
 import CollectionItem from "../Components/CollectionItem/CollectionItem"
 import useGemFarmStaking from "../hooks/useGemFarmStaking"
 import { useWallet } from "../node_modules/@solana/wallet-adapter-react"
 // import { LoadingIcon } from "@/components/icons/LoadingIcon"
 
-import { Tab, Tabs, TabList, TabPanel } from "../node_modules/react-tabs"
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import Header from "../Components/Header/Header"
 import { LoadingIcon } from "../Components/icons/LoadingIcon"
-import { useState } from "../node_modules/react"
-import { GEM_BANK_PROG_ID, GEM_FARM_PROG_ID } from "@gemworks/gem-farm-ts"
+import { useState } from "react"
 
 const StakePage = () => {
   const [farmId, setFarmId] = useState(process.env.NEXT_PUBLIC_GEMFARM_ID || "")
@@ -52,14 +51,15 @@ return (
       </div>
       <br/>
       <div className="Staker">
-      <Flex
-        sx={{
-          flexDirection: "column",
-          marginTop: "3.2rem",
-          alignItems: "center",
-          padding: "0 .5rem",
-        }}
-      >
+        <Flex sx={
+          {
+            // flexDirection: "column",
+            // marginTop: "3.2rem",
+            // alignItems: "center",
+            // padding: "0 .5rem"
+          }
+        }
+        >
         <Heading>Start staking your Toasty Friends!</Heading>
         <Text>(Because whats better with breakfest than steak)</Text>
 
