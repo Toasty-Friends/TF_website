@@ -53,10 +53,10 @@ return (
       <div className="Staker">
         <Flex sx={
           {
-            // flexDirection: "column",
-            // marginTop: "3.2rem",
-            // alignItems: "center",
-            // padding: "0 .5rem"
+            flexDirection: "column",
+            marginTop: "3.2rem",
+            alignItems: "center",
+            padding: "0 .5rem"
           }
         }
         >
