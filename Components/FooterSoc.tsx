@@ -5,20 +5,17 @@ import {
   faTwitter,
   faInstagram,
 } from "../node_modules/@fortawesome/free-brands-svg-icons/index";
-import Image from "../node_modules/next/image";
 
 const Footer = () => {
   return (
-    <div>
-      <footer>
+    <>
         <div className="footer-links">
           <a href="https://discord.gg/EvCeZ3grnf">
-            <FontAwesomeIcon icon={faDiscord} />
+            <FontAwesomeIcon icon={faDiscord} title="Discord" />
           </a>
           <a href="https://twitter.com/toasty_friends">
-            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faTwitter} title="Twitter" />
           </a>
-          
           {/* <a href="https://www.instagram.com/toasty_friends/">
           <FontAwesomeIcon icon={faInstagram} />
           </a> */}
@@ -27,8 +24,7 @@ const Footer = () => {
           </a> */}
         </div>
         <p>2022 Toasty Friends&#169;</p>
-      </footer>
-    </div>
+    </>
   );
 };
 

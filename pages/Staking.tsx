@@ -45,11 +45,7 @@ const StakePage = () => {
 
 return (
     <Container>
-      <br/>
-      <div className="StakingHead">
       <Header farmId={farmId} setFarmId={setFarmId} />
-      </div>
-      <br/>
       <div className="Staker">
         <Flex sx={
           {
@@ -181,7 +177,7 @@ return (
                     Claim{" "}
                     
                     {availableA ? (
-                      <b>{(availableA / 1000000000).toFixed(9)}</b>
+                      <b>{(availableA)}</b>
                     ) : (
                       0
                     )}
