@@ -1,11 +1,7 @@
-/** @jsxImportSource theme-ui */
-import Link from "next/link"
 import { Button, Container, Flex, Input, Text } from "@theme-ui/components"
-
 import WalletManager from "../WalletManager/WalletManager"
 import { Dispatch, SetStateAction, useState } from "react"
 import { CloseIcon, MenuIcon } from "../icons"
-import { WalletConnectButton, WalletDisconnectButton } from "@solana/wallet-adapter-react-ui"
 
 type Props = {
   farmId?: string
@@ -20,13 +16,14 @@ const Header = ({ farmId, setFarmId }: Props) => {
       sx={{
         position: "sticky",
         top: 0,
-        zIndex: 9,
+        zIndex: 98,
         background: (theme) => theme.colors?.backgroundGradient,
         borderBottom: "1px solid",
         borderColor: "background2",
-      }}
+      }
+    }
     >
-      <Container>
+      <Container className="ClubhouseTB">
         <Flex
           sx={{
             alignItems: "center",
@@ -125,6 +122,7 @@ const Header = ({ farmId, setFarmId }: Props) => {
                 ...(!isMobileMenuActive && { display: "none" }),
               }}
               onClick={() => setIsMobileMenuActive(false)}
+              title="idk"
             >
               <CloseIcon />
             </Button>
@@ -164,6 +162,7 @@ const Header = ({ farmId, setFarmId }: Props) => {
               },
             }}
             onClick={() => setIsMobileMenuActive(true)}
+            title="idk"
           >
             <MenuIcon />
           </Button>

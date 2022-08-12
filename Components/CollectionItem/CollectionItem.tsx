@@ -1,8 +1,6 @@
 /** @jsxImportSource theme-ui */
 import React, { useRef, useState } from "react"
-import { Button, Flex, Text } from "theme-ui"
-
-import { DotsIcon } from "../icons"
+import { Flex, Text } from "theme-ui"
 import useOutsideClick from "../../hooks/useOutsideClick"
 import { NFT } from "../../hooks/useWalletNFTs"
 

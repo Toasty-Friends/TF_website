@@ -3,9 +3,7 @@ import React, { Component } from "react";
 export default class Index extends Component {
   render() {
     return (
-      <>
-      
-        <body>
+        <>
           <div className="mainpage">
             <img
               src="styles/images/BasementParty.jpg"
@@ -130,8 +128,7 @@ export default class Index extends Component {
           {/* <button onClick={topFunction} id="topBtn" title="Go to top">
             Return to Top
           </button> */}
-        </body>
-      </>
+        </>
     );
   }
 }

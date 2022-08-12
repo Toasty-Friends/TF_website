@@ -15,19 +15,17 @@ const Header = () => {
   });
 
   return (
-    <div>
+    <div className="Appbar">
       <header>
         <nav className="nav-bar">
           <div className="topnav" id="myTopnav">
             <div className="logo-image">
               <Link href="/">
                 <a>
-                  <Image
-                    src="/styles/images/ToastyLogo.jpg"
+                  <img 
+                    src="styles/images/ToastyLogo.jpg"
                     alt="logo"
-                    layout="fill"
-                    objectFit="cover"
-                    
+                    className="logo-image"
                   />
                 </a>
               </Link>
@@ -36,8 +34,6 @@ const Header = () => {
               <Link href="/Team">Team</Link>
               <Link href={"/#Roadmap"}>Roadmap</Link>
               <Link href={"/Clubhouse"}>Clubhouse</Link>
-
-              {/* <Link href="/Clubhouse">Clubhouse</Link> */}
               {/* <a href="javascript:void(0)" className="icon" onClick={toggleMenu}>
               <i className="fa fa-bars"></i>
             </a> */}
