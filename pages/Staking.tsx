@@ -208,8 +208,8 @@ return (
 
             <Tabs>
               <TabList>
-                <Tab>Your wallet</Tab>
-                <Tab>Your vault</Tab>
+                <Tab><Button>Your wallet</Button></Tab>
+                <Tab><Button>Your vault</Button></Tab>
               </TabList>
 
               <TabPanel>
