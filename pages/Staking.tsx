@@ -161,7 +161,8 @@ return (
                     onClick={handleUnstakeButtonClick}
                     disabled={
                       !(
-                        farmerStatus === "staked" ||
+                        farmerStatus === "staked" 
+                        ||
                         farmerStatus === "pendingCooldown"
                       )
                     }
@@ -172,19 +173,19 @@ return (
                   </Button>
                   <Button
                     onClick={handleClaimButtonClick}
-                    disabled={!Number(availableA)}
+                  
                   >
-                    Claim{" "}
+                    Claim {availableA}
                     
-                    {availableA ? (
+                    {/* {availableA ? (
                       <b>{(availableA)}</b>
                     ) : (
                       0
-                    )}
+                    )} */}
                   </Button>
-                  <Button onClick={handleRefreshRewardsButtonClick}>
+                  {/* <Button onClick={handleRefreshRewardsButtonClick}>
                     Refresh
-                  </Button>
+                  </Button> */}
                 </Flex>
                 <Flex
                   sx={{
@@ -208,8 +209,8 @@ return (
 
             <Tabs>
               <TabList>
-                <Tab><Button>Your wallet</Button></Tab>
-                <Tab><Button>Your vault</Button></Tab>
+                <Tab><button>Your wallet</button></Tab>
+                <Tab><button>Your vault</button></Tab>
               </TabList>
 
               <TabPanel>
