@@ -1,5 +1,4 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import Getter from "./Getter";
 
 export default function DiscordLogin() {
   const { data: session } = useSession();

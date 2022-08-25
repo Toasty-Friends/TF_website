@@ -3,9 +3,7 @@ import { Text } from "theme-ui"
 import DiscordLogin from "Components/discordLogin";
 import { useSession } from "next-auth/react";
 import WalletHeader from "Components/Header/WalletHeader";
-import Getter from "Components/Getter";
 import { ClubhouseAppbar } from "Components/ClubhouseAppbar";
-import Staking from "Components/Staking";
 
 export default function Clubhouse() {
 

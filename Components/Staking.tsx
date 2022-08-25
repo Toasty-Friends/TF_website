@@ -7,7 +7,6 @@ import { useWallet } from "@solana/wallet-adapter-react"
 // import { LoadingIcon } from "@/components/icons/LoadingIcon"
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import WalletHeader from "./Header/WalletHeader"
 import { LoadingIcon } from "./icons/LoadingIcon"
 import { useState } from "react"
 
