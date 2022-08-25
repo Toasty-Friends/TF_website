@@ -1,6 +1,5 @@
 import Link from "../node_modules/next/link";
 import React from "react";
-import Image from "../node_modules/next/image";
 
 const Header = () => {
   //   const toggleMenu = (e: { preventDefault: () => void }) => {
@@ -13,6 +12,8 @@ const Header = () => {
   const [state, setState] = React.useState({
     open: false,
   });
+
+  
 
   return (
     <div className="Appbar">

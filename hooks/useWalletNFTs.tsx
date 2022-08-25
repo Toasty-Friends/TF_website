@@ -32,7 +32,11 @@ const useWalletNFTs = () => {
 
   useEffect(() => {
     const fetchNFTs = async () => {
-      const NFTs = await getNFTsByOwner(publicKey, connection)
+      var NFTs = await getNFTsByOwner(publicKey, connection)
+      NFTs = NFTs.filter(NFT => {
+        console.log(NFT.onchainMetadata.updateAuthority)
+        return NFT.onchainMetadata.updateAuthority ==='493ZbidfhGB51vkwBPtLUc6onMXFcRmsPkrNY9FJXQSR';
+      })
       setWalletNFTs(NFTs)
     }
 

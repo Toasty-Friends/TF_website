@@ -1,15 +1,10 @@
-import { Button, Container, Flex, Input, Text } from "@theme-ui/components"
-import WalletManager from "../WalletManager/WalletManager"
-import { Dispatch, SetStateAction, useState } from "react"
-import { CloseIcon, MenuIcon } from "../icons"
+import { Button, Container, Flex, Input, Text } from "@theme-ui/components";
+import WalletManager from "../WalletManager/WalletManager";
+import { useState } from "react";
+import { CloseIcon, MenuIcon } from "../icons";
 
-type Props = {
-  farmId?: string
-  setFarmId?: Dispatch<SetStateAction<string>>
-}
-const Header = ({ farmId, setFarmId }: Props) => {
-  const [isMobileMenuActive, setIsMobileMenuActive] = useState(false)
-  const [isChangingFarmId, setIsChangingFarmId] = useState(false)
+const Header = () => {
+  const [isMobileMenuActive, setIsMobileMenuActive] = useState(false);
 
   return (
     <Flex
@@ -20,8 +15,7 @@ const Header = ({ farmId, setFarmId }: Props) => {
         background: (theme) => theme.colors?.backgroundGradient,
         borderBottom: "1px solid",
         borderColor: "background2",
-      }
-    }
+      }}
     >
       <Container className="ClubhouseTB">
         <Flex
@@ -31,44 +25,10 @@ const Header = ({ farmId, setFarmId }: Props) => {
           }}
           p=".8rem"
         >
-          {/* <Link href="/" passHref> */}
-            <Flex as="a" sx={{ alignItems: "center", flexDirection: "column" }}>
-              {/* <Flex sx={{ alignItems: "center" }}> */}
-                {/* <Text as="h1" variant="headingSpecial" ml=".4rem">
-                  GEM
-                </Text> */}
-
-                {/* <img
-                  sx={{
-                    maxHeight: "4.8rem",
-                  }}
-                  src="/images/gemtransparent.gif"
-                  alt="Gemworks"
-                /> */}
-
-                {/* <Text as="h1" variant="headingSpecial" ml=".4rem">
-                  FARM
-                </Text> */}
-              {/* </Flex> */}
-              {/* <Text
-                sx={{
-                  display: "block",
-                }}
-                variant="small"
-              >
-                by Gemworks
-              </Text> */}
-            </Flex>
-          {/* </Link> */}
-          {/* <Text
-            variant="small"
-            sx={{
-              marginRight: "auto",
-            }}
-          >
-            &nbsp;&nbsp;&nbsp;&#8226;&nbsp;
-            {process.env.NEXT_PUBLIC_CONNECTION_NETWORK}
-          </Text> */}
+          <Flex
+            as="a"
+            sx={{ alignItems: "center", flexDirection: "column" }}
+          ></Flex>
 
           <Flex
             as="nav"
@@ -126,32 +86,6 @@ const Header = ({ farmId, setFarmId }: Props) => {
             >
               <CloseIcon />
             </Button>
-            {isChangingFarmId && (
-              <Input
-                sx={{
-                  fontSize: "1.1rem",
-                  padding: ".4rem",
-                  border: "none",
-                  borderBottom: "1px solid",
-                  borderRadius: 0,
-                  width: "auto",
-                }}
-                value={farmId}
-                onChange={(e) => setFarmId(e.target.value)}
-              />
-            )}
-            {/* <a
-              tabIndex={0}
-              sx={{
-                margin: "0 auto",
-                fontSize: "1.1rem",
-                whiteSpace: "nowrap",
-              }}
-              onClick={() => setIsChangingFarmId((prev) => !prev)}
-            >
-              (Change Farm ID)
-            </a> */}
-
             <WalletManager />
           </Flex>
           <Button
@@ -169,7 +103,7 @@ const Header = ({ farmId, setFarmId }: Props) => {
         </Flex>
       </Container>
     </Flex>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
