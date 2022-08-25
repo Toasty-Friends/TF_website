@@ -13,8 +13,6 @@ const Header = () => {
     open: false,
   });
 
-  
-
   return (
     <div className="Appbar">
       <header>

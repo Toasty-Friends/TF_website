@@ -2,7 +2,6 @@
   "name": "toastyfriendsv2",
   "version": "1.0.0",
   "description": "",
-  "proxy": "http://localhost:8888",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
