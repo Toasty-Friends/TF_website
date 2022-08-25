@@ -1,14 +1,13 @@
 /** @jsxImportSource theme-ui */
 import { Flex, Text, Heading, Spinner, Button, Container } from "theme-ui"
 
-import CollectionItem from "../Components/CollectionItem/CollectionItem"
+import CollectionItem from "./CollectionItem/CollectionItem"
 import useGemFarmStaking from "../hooks/useGemFarmStaking"
-import { useWallet } from "../node_modules/@solana/wallet-adapter-react"
+import { useWallet } from "@solana/wallet-adapter-react"
 // import { LoadingIcon } from "@/components/icons/LoadingIcon"
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import Header from "../Components/Header/Header"
-import { LoadingIcon } from "../Components/icons/LoadingIcon"
+import { LoadingIcon } from "./icons/LoadingIcon"
 import { useState } from "react"
 
 const StakePage = () => {
@@ -38,14 +37,9 @@ const StakePage = () => {
 
   const { publicKey } = useWallet()
 
-//   const timer = setTimeout(() => {
-//     handleRefreshRewardsButtonClick()
-//  }, 1000);
-
 
 return (
     <Container>
-      <Header farmId={farmId} setFarmId={setFarmId} />
       <div className="Staker">
         <Flex sx={
           {
@@ -57,7 +51,7 @@ return (
         }
         >
         <Heading>Start staking your Toasty Friends!</Heading>
-        <Text>(Because whats better with breakfest than steak)</Text>
+        <Text>(Because whats better with breakfast than steak)</Text>
 
         {!publicKey ? (
           /** Render nothing if there is no wallet connected. */
@@ -209,8 +203,10 @@ return (
 
             <Tabs>
               <TabList>
+                <div className="options">
                 <Tab><button>Your wallet</button></Tab>
                 <Tab><button>Your vault</button></Tab>
+                </div>
               </TabList>
 
               <TabPanel>
@@ -222,6 +218,7 @@ return (
                         alignItems: "center",
                       }}
                     >
+
                       <div
                         sx={{
                           display: "grid",
@@ -246,8 +243,9 @@ return (
                               NFT.onchainMetadata.mint ===
                               item.onchainMetadata.mint
                           )
-
+                          
                           return (
+                            
                             <CollectionItem
                               key={item.onchainMetadata.mint}
                               item={item}

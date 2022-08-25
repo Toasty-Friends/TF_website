@@ -1,4 +1,4 @@
-color code BA610A
+/* color code BA610A */
 
 /* global */
 
@@ -6,6 +6,7 @@ color code BA610A
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Plump";
 
 }
 
@@ -17,17 +18,30 @@ html {
 
 body {
   background-color: black;
-  font-family: "Lato", sans-serif;
-  font-family: "Oswald", sans-serif;
   margin-top: 75px;
-
 }
 
 /* CUSTOM CSS */
 .Appbar{
   z-index: 99;
-
+  margin-bottom: -3em;
 }
+
+.DiscordSignOut{
+  float:right;
+  margin-right: 1em;
+  color: #BA610A;
+  background-color: #000;
+  margin-top: -.8em;
+}
+.ClubhouseAppbar button {
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  font-size: 1.5em;
+  background-color: #000;
+  color: #ba610a !important;
+}
+
 
 .ClubhouseTB{
   position: fixed;
@@ -392,8 +406,7 @@ footer p {
   margin-right: 25%;
   background-color: rgba(0, 0, 0, 0.800); /* Tint color */
   background-blend-mode: multiply;
-  font-weight: 999;
-  font-family: Plumpfull;
+  font-weight: 500;
 }
 .phase2 {
   background-image: null;
@@ -409,8 +422,8 @@ footer p {
   margin-left: 25%;
   /* background-color: rgba(0, 0, 0, 0.817); Tint color */
   background-blend-mode: multiply;
-  font-weight: 999;
-  font-family: Plumpfull;
+  font-weight: 500;
+
 }
 .phase1 {
   background-image: url(./images/MintIMG.jpg);
@@ -425,6 +438,28 @@ footer p {
   margin-right: 25%;
   background-color: rgba(0, 0, 0, 0.800); /* Tint color */
   background-blend-mode: multiply;
-  font-weight: 999;
-  font-family: Plumpfull;
+  font-weight: 500;
+}
+
+.options button{
+  border-style: none;
+}
+
+.clubhouseComp{
+  margin-top: 7em;
+  margin-bottom: 2em;
+}
+
+.ClubhouseHome{
+  margin-top: -2em;
+  margin-bottom: 30em;
+}
+
+.ClubhouseHome h1{
+  font-size: 2em;
+}
+
+.ClubhouseHome p{
+  margin-top: 2em;
+  font-size: 1em;
 }

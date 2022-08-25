@@ -1,9 +1,7 @@
 import { FontAwesomeIcon } from "../node_modules/@fortawesome/react-fontawesome/index";
 import {
   faDiscord,
-  faTiktok,
   faTwitter,
-  faInstagram,
 } from "../node_modules/@fortawesome/free-brands-svg-icons/index";
 
 const Footer = () => {
