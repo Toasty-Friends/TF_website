@@ -11,20 +11,14 @@ export default function Clubhouse() {
   const { data: session } = useSession();
 
 
-  // async function fetchTest(wallet_id, discord_id) {
-  //   await fetch(
-  //     `http://139.144.63.135:8888/set_holder?wallet_id=${wallet_id}&discord_id=${discord_id}`,
-  //     {
-  //       method: "POST",
-  //       mode: "cors",
-  //     }
-  //   );
-  // }  
 
   return (
     <>
       {publicKey && session ? (
+        <>
         <ClubhouseAppbar/>
+        </>
+
       ): (
         <>
         </>
@@ -45,9 +39,6 @@ export default function Clubhouse() {
             </>
         ) : (
           <>
-          {/* Render from buttons here */}
-          {/* You are logged in as&nbsp; */}
-          {/* <Getter/> */}
           </>
         )
       }
