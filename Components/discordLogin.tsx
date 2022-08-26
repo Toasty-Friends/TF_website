@@ -29,7 +29,7 @@ export default function DiscordLogin() {
       Please connect your Discord account! <br />
       <button
         onClick={() =>
-          signIn("discord", { callbackUrl: "http://toastyfriends.club:3000/Clubhouse" })
+          signIn("discord", { callbackUrl: "http://toastyfriends.club/Clubhouse" })
         }
       >
         Sign in
