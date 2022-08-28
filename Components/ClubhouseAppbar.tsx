@@ -14,7 +14,7 @@ export function ClubhouseAppbar() {
   async function verifyHolder() {
     const resp = await fetch(
       //@ts-ignore
-      `http://139.144.63.135:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${session.profile.id}`,
+      `https://139.144.63.135:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${session.profile.id}`,
       {
         method: "POST",
         mode: "cors",
@@ -27,7 +27,7 @@ export function ClubhouseAppbar() {
   async function getHolder() {
     const resp = await fetch(
       //@ts-ignore
-      `http://139.144.63.135:8888/holder/${publicKey.toString()}`,
+      `https://139.144.63.135:8888/holder/${publicKey.toString()}`,
       {
         method: "GET",
         mode: "cors"
