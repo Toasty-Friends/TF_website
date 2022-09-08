@@ -2,6 +2,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
 import Staking from "./Staking";
+// import StakeV2Page from "./StakingV2";
 
 export function ClubhouseAppbar() {
   const { publicKey } = useWallet()
@@ -9,7 +10,7 @@ export function ClubhouseAppbar() {
   const [status, setStatus] = useState(String);
   const [showStaking, setShowStaking] = useState(false);
   const [showVerify, setShowVerify] = useState(false);
-  const [showAnother, setShowAnother] = useState(false);
+  // const [showStakingV2, setShowStakingV2] = useState(false);
 
   async function verifyHolder() {
     const resp = await fetch(
@@ -42,17 +43,17 @@ export function ClubhouseAppbar() {
   const handleHome = (event) => {
     setShowStaking(false)
     setShowVerify(false)
-    setShowAnother(false)
+    // setShowStakingV2(false)
   };
   const handleStaking = (event) => {
     setShowStaking(true)
     setShowVerify(false)
-    setShowAnother(false)
+    // setShowStakingV2(false)
   };
-  const handleAnother = (event) => {
+  const handleStakingV2 = (event) => {
     setShowStaking(false)
     setShowVerify(false)
-    setShowAnother(true)
+    // setShowStakingV2(true)
   };
   return (
     <>
@@ -69,15 +70,18 @@ export function ClubhouseAppbar() {
     <>
       <div className="ClubhouseAppbar">
         <button onClick={handleStaking}>Staking</button>
-        {/* <button onClick={handleAnother}>Another</button> */}
+        {/* <button onClick={handleStakingV2}>Staking.V2</button> */}
       </div>
       <div className="clubhouseComp">
     
     {showStaking ? (
         <Staking/>
-    ) : (
-        <>
-        </>
+    // ) : showStakingV2 ?(
+    //     <StakeV2Page/>
+    // )
+    ):(
+      <>
+      </>
     )
     }
     </div>
@@ -88,6 +92,12 @@ export function ClubhouseAppbar() {
         <h1>Welcome to the clubhouse!</h1>
         <br/>
         <button onClick={verifyHolder}>Verify</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <Staking/>
         <br/>
         <p>This section is still under development! UI will be 
             modified and cleaned up but functionality is the main 
