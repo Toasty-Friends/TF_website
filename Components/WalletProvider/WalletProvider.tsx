@@ -58,11 +58,7 @@ const Wallet = ({ children }: { children: React.ReactNode }) => {
     >
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          {/* <WalletMultiButton />
-          <WalletDisconnectButton /> */}
-
           {children}
-          {/* Your app's components go here, nested within the context providers. */}
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
