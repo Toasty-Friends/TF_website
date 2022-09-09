@@ -3,6 +3,7 @@ import { useState } from "react";
 import * as SolanaWeb3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 
+
 const StakeV2Page = () => {
   const { connection } = useConnection();
   const { publicKey, signTransaction } = useWallet();
@@ -42,7 +43,8 @@ const StakeV2Page = () => {
     // form transaction from returned amount
 
     const transaction = new SolanaWeb3.Transaction();
-
+    
+    //@ts-ignore
     const fromTokenAccount = await splToken.getOrCreateAssociatedTokenAccount(
       connection,
       auth,
@@ -50,7 +52,7 @@ const StakeV2Page = () => {
       auth.publicKey,
       splToken.TOKEN_PROGRAM_ID
     );
-
+    //@ts-ignore
     const toTokenAccount = await splToken.getOrCreateAssociatedTokenAccount(
       connection,
       signTransaction,
@@ -60,6 +62,7 @@ const StakeV2Page = () => {
     );
 
     transaction.add(
+      //@ts-ignore
       splToken.createTransferInstruction(
         fromTokenAccount.address,
         toTokenAccount.address,
