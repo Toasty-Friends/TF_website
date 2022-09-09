@@ -12,7 +12,7 @@ export default function DiscordLogin() {
     console.log(guildArray);
 
     const discord_id =
-        // @ts-ignore
+      // @ts-ignore
       session.profile.username + "%23" + session.profile.discriminator;
     return (
       <>
@@ -29,7 +29,9 @@ export default function DiscordLogin() {
       Please connect your Discord account! <br />
       <button
         onClick={() =>
-          signIn("discord", { callbackUrl: "http://toastyfriends.club/Clubhouse" })
+          signIn("discord", {
+            callbackUrl: "https://toastyfriends.club/Clubhouse",
+          })
         }
       >
         Sign in
