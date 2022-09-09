@@ -15,8 +15,7 @@ export function ClubhouseAppbar() {
   async function verifyHolder() {
     const resp = await fetch(
       //@ts-ignore
-      `https://mint-toastyfriends.club:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${
-        session.profile.id
+      `https://mint-toastyfriends.club:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${session.profile.id
       }`,
       {
         method: "POST",
