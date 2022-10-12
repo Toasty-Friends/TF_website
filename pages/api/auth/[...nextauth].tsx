@@ -20,19 +20,19 @@ export default NextAuth({
             if (profile) { 
                 token.profile = profile;
             }
-            console.log(profile)
-            if(account?.access_token) token.accessToken = account.access_token;
-            const data = await (
-                await fetch("https://discord.com/api/v8/users/@me/guilds", {
-                    method: "GET",
-                    headers: {
-                        Authorization: `Bearer ${token.accessToken}`,
-                    },
-                })
-            ).json();
+            // console.log(profile)
+            // if(account?.access_token) token.accessToken = account.access_token;
+            // const data = await (
+            //     await fetch("https://discord.com/api/v8/users/@me/guilds", {
+            //         method: "GET",
+            //         headers: {
+            //             Authorization: `Bearer ${token.accessToken}`,
+            //         },
+            //     })
+            // ).json();
 
-            //@ts-ignore
-            token.profile.guilds = data;
+            // //@ts-ignore
+            // token.profile.guilds = data;
 
             return token;
         },

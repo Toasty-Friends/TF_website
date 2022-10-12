@@ -87,7 +87,7 @@ export function ClubhouseAppbar() {
           <div className="ClubhouseAppbar">
             <button onClick={handleHome}>Home</button>
             <button onClick={handleStakingV2}>Staking</button>
-            {session.user.name == "The Lost Toastr" ? (
+            {session.user.email == "josht98@aol.com" ? (
               <button onClick={handleAdmin}>Admin</button>
             ) :
             (<></>)
