@@ -1,47 +1,47 @@
 import { useWallet } from "@solana/wallet-adapter-react";
-import { Text } from "theme-ui"
+import { Text } from "theme-ui";
 import DiscordLogin from "Components/discordLogin";
 import { useSession } from "next-auth/react";
 import WalletHeader from "Components/Header/WalletHeader";
 import { ClubhouseAppbar } from "Components/ClubhouseAppbar";
+import {
+  WalletConnectButton,
+  WalletMultiButton,
+} from "@solana/wallet-adapter-react-ui";
+import Staking from "Components/Staking";
 
 export default function Clubhouse() {
-
-  const { publicKey } = useWallet()
+  const { publicKey } = useWallet();
   const { data: session } = useSession();
-
-
 
   return (
     <>
+      <div className="WalletButton">
+        <WalletMultiButton />
+      </div>
       {publicKey && session ? (
         <>
-        <ClubhouseAppbar/>
+          <ClubhouseAppbar />
+          <Staking />
         </>
-
-      ): (
-        <>
-        </>
+      ) : (
+        <></>
       )}
-      <WalletHeader/>
-      {!publicKey && !session ? (
-            <Text
-            sx={{
-              textAlign: "center",
-              margin: "3.2rem 0",
-            }}
-          >
-            Please, Connect your Phantom wallet.
-          </Text>
-        ) : publicKey && !session ? (
-            <>
-            <DiscordLogin/>
-            </>
-        ) : (
-          <>
-          </>
-        )
-      }
+
+      {!publicKey ? (
+        <div className="NoWallet">
+          <p>
+            Please, Connect your wallet to continue.
+          </p>
+        </div>
+      ) : !session ? (
+        <>
+          <DiscordLogin />
+          <Staking />
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

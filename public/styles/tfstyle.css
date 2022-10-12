@@ -27,13 +27,6 @@ body {
   margin-bottom: -3em;
 }
 
-.DiscordSignOut{
-  float:right;
-  margin-right: 1em;
-  color: #BA610A;
-  background-color: #000;
-  margin-top: -.8em;
-}
 .ClubhouseAppbar button {
   margin-left: 2.5em;
   margin-right: 2.5em;
@@ -451,15 +444,123 @@ footer p {
 }
 
 .ClubhouseHome{
-  margin-top: -2em;
-  margin-bottom: 30em;
+  padding-top: 7em;
+  margin-left: 7em;
+  margin-right: 7em;
+  margin-bottom: 15em;
 }
 
 .ClubhouseHome h1{
-  font-size: 2em;
+}
+
+.VerifyButton{
+  margin-top: 3em;
+  background-color: #BA610A;
+  width: 13em;
+  height: 3em;
+  border-radius: 10px;
 }
 
 .ClubhouseHome p{
-  margin-top: 2em;
-  font-size: 1em;
+  margin-top: 3em;
+}
+
+.ClubhouseHome li{
+  text-align: center;
+}
+
+.StakingHeader{
+  font-size: 12px;
+  margin-bottom: 3em;
+}
+.Title{
+  font-size: 25px;
+}
+.StartedStaking{
+  margin-bottom: 1.5em;
+
+}
+.AmountStaked{
+  margin-bottom: 1.5em;
+
+}
+.StakingRewards{
+  margin-bottom: 1.5em;
+
+}
+.RewardsClaimed{
+  margin-bottom: 1.5em;
+
+}
+.RewardsToClaim{
+  margin-bottom: 1.5em;
+
+}
+.ClaimButton button{
+  background-image: linear-gradient(to right, #dc1fff, #857aff, #00a2ff, #00bcff, #00cdff, #00d7fe, #00e1fb, #00ebf6, #00f2eb, #00f7d9, #00fcc1, #00ffa3);
+  width: 13em;
+  height: 4em;
+  border-radius: 10px;
+  margin-bottom: 70px;
+}
+.ClaimButton p{
+  font-size: 18px;
+  font-family: "Plump";
+  color: black;
+}
+
+.ClubhouseAppbar{
+}
+
+.WalletButton{
+  float: right;
+  margin-top: -3em;
+  margin-right: 2em;
+}
+
+.DiscordSignOut{
+  float: right;
+  margin-top: 1em;
+  margin-right: 2.2em;
+  height: 4em;
+  width: 14em;
+  border-radius: 5px;
+  background-color: #7289d9;
+}
+
+.DiscordSignOut p{
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.DiscordIcon{
+  float: left;
+  margin-left: 2em;
+  margin-right: -2em;
+  height: 1em;
+}
+
+.DiscordLoginBtn{
+  margin-top: 4em;
+  color: white;
+  background-color: #7289DA;
+  width: 10em;
+  height: 3em;
+  border-radius: 10px;
+}
+
+.DiscordLogin{
+  padding-top: 10em;
+  padding-bottom: 25em;
+  padding-left: 6em;
+  padding-right: 6em;
+}
+
+.ClubhouseHomeVerify{
+  margin-bottom: 23em;
+}
+
+.NoWallet{
+  padding-top: 10em;
+  margin-bottom: 30em;
 }

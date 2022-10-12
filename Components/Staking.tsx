@@ -73,14 +73,7 @@ return (
           <Text mt="1.6rem">Farm ID is not configured. Contact admin.</Text>
         ) : /** If there is farmerAccount variable, but no address, it means account isn't initialized */
         farmerAccount && !farmerAccount?.identity ? (
-          <Button
-            sx={{
-              margin: "3.2rem 0",
-            }}
-            onClick={handleInitStakingButtonClick}
-          >
-            Open your own staking account
-          </Button>
+          <p>deprecated use staking v2</p>
         ) : (
           <>
             {/** Render everything, since there is wallet and farmer account */}
@@ -143,14 +136,6 @@ return (
                     },
                   }}
                 >
-                  <Button
-                    onClick={handleStakeButtonClick}
-                    disabled={
-                      !(farmerStatus === "unstaked" && farmerVaultNFTs?.length)
-                    }
-                  >
-                    Stake
-                  </Button>
                   <Button
                     onClick={handleUnstakeButtonClick}
                     disabled={

@@ -1,21 +1,25 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
-import Staking from "./Staking";
 import StakeV2Page from "./StakingV2";
+import { FaDiscord } from "react-icons/fa";
+import Admin from "pages/admin";
 
 export function ClubhouseAppbar() {
   const { publicKey } = useWallet();
   const { data: session } = useSession();
   const [status, setStatus] = useState(String);
-  const [showStaking, setShowStaking] = useState(false);
+  const [showHome, setShowHome] = useState(true);
   const [showVerify, setShowVerify] = useState(false);
   const [showStakingV2, setShowStakingV2] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false);
+  const [gotHolder, setGotHolder] = useState(false)
 
   async function verifyHolder() {
     const resp = await fetch(
-      //@ts-ignore
-      `https://mint-toastyfriends.club:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${session.profile.id
+      `https://mint-toastyfriends.club:8888/set_holder?wallet_id=${publicKey.toString()}&discord_id=${
+        //@ts-ignore
+        session.profile.id
       }`,
       {
         method: "POST",
@@ -27,6 +31,10 @@ export function ClubhouseAppbar() {
   }
 
   async function getHolder() {
+    setGotHolder(true)
+    var count = 0
+    do{
+      count++
     const resp = await fetch(
       //@ts-ignore
       `https://mint-toastyfriends.club:8888/holder/${publicKey.toString()}`,
@@ -37,24 +45,27 @@ export function ClubhouseAppbar() {
     );
     const holderInfo = await resp.json();
     setStatus(holderInfo.status);
+    } while (count < 1);
   }
-
+  if (gotHolder==false){
   getHolder();
-
+  }
+  
   const handleHome = (event) => {
-    setShowStaking(false);
-    setShowVerify(false);
-    setShowStakingV2(false);
-  };
-  const handleStaking = (event) => {
-    setShowStaking(true);
+    setShowHome(true);
     setShowVerify(false);
     setShowStakingV2(false);
   };
   const handleStakingV2 = (event) => {
-    setShowStaking(false);
+    setShowHome(false);
     setShowVerify(false);
     setShowStakingV2(true);
+  };
+  const handleAdmin = (event) => {
+    setShowHome(false);
+    setShowVerify(false);
+    setShowStakingV2(false);
+    setShowAdmin(true)
   };
   return (
     <>
@@ -64,22 +75,45 @@ export function ClubhouseAppbar() {
         }
         className="DiscordSignOut"
       >
-        <br />
-        Sign out
+        <p>
+          <div className="DiscordIcon">
+            <FaDiscord />
+          </div>
+          Sign out
+        </p>
       </button>
       {status == "ACTIVE" ? (
         <>
           <div className="ClubhouseAppbar">
-            <button onClick={handleStaking}>Staking</button>
-            <button onClick={handleStakingV2}>Staking.V2</button>
+            <button onClick={handleHome}>Home</button>
+            <button onClick={handleStakingV2}>Staking</button>
+            {session.user.name == "The Lost Toastr" ? (
+              <button onClick={handleAdmin}>Admin</button>
+            ) :
+            (<></>)
+            }
           </div>
           <div className="clubhouseComp">
-            {showStaking ? (
-              <Staking />
+            {showHome ? (
+               <div className="ClubhouseHomeVerify">
+               <h1>Welcome to the clubhouse!</h1>
+               <p>This is where the magic happens!
+                <br/>
+                <br/>
+                Check out our features that have all built in house:
+                <br/>
+                <br/>
+                  <li>Holder Verification</li>
+                  <li>Non-custodial Staking</li>
+                  <li>More To Be Added...</li>
+               </p>
+               </div>
             ) : showStakingV2 ? (
               <StakeV2Page />
-            ) : (
-              <></>
+            ) : showAdmin ? (
+              <Admin/>
+            ): (
+              <>ERROR</>
             )}
           </div>
         </>
@@ -87,15 +121,8 @@ export function ClubhouseAppbar() {
         <>
           <div className="ClubhouseHome">
             <h1>Welcome to the clubhouse!</h1>
-            <br />
-            <button onClick={verifyHolder}>Verify</button>
-            <br />
-            <br />
-            <br />
-            <br />
-
-            <Staking />
-            <br />
+            {/* set loading screen after button click */}
+            <button className="VerifyButton" onClick={verifyHolder}>Verify</button>
             <p>
               This section is still under development! UI will be modified and
               cleaned up but functionality is the main focus currently!
@@ -106,11 +133,9 @@ export function ClubhouseAppbar() {
               <br />
               <br />
             </p>
-            <ul>
               <li>Added Discord Login</li>
               <li>Fixed seeing all wallet NFT's</li>
               <li>Added Holder Verifications</li>
-            </ul>
           </div>
         </>
       )}
