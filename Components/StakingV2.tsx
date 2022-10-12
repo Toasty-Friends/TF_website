@@ -12,12 +12,16 @@ const StakeV2Page = () => {
   var [claimedRewards, setClaimedRewards] = useState(Number);
   const [amount, setAmount] = useState(Number);
   const [stakingStart, setStakingStart] = useState();
+  const [disabled, setDisabled] = useState(false);
+  const [gotHolder, setGotHolder] = useState(false)
+
 
   const tokenMint = new SolanaWeb3.PublicKey(
     "4nxUY1jjtKZR27XcqJCW36kvAZi1iaceBTmgMK1i95gB"
   );
 
   async function claimRewards() {
+    setDisabled(true);
     //call claim api
     const resp = await fetch(
       //@ts-ignore
@@ -82,34 +86,49 @@ const StakeV2Page = () => {
     transaction.lastValidBlockHeight = latestBlockHash.lastValidBlockHeight;
 
     transaction.partialSign(auth);
+    
+    try{
+      const signed = await signTransaction(transaction);
+    
+      const signature = await connection.sendRawTransaction(signed.serialize());
 
-    const signed = await signTransaction(transaction);
+      var response = await connection.confirmTransaction({
+        signature,
+        lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+        blockhash: latestBlockHash.blockhash,
+      });
 
-    const signature = await connection.sendRawTransaction(signed.serialize());
+      console.log(response.value.err);
 
-    var response = await connection.confirmTransaction({
-      signature,
-      lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
-      blockhash: latestBlockHash.blockhash,
-    });
+      if (response.value.err == null) {
+        claimedRewards += amountToClaim;
+        await fetch(
+          //@ts-ignore
+          `https://mint-toastyfriends.club:8888/updateclaimed?wallet_id=${publicKey.toString()}&claimed=${claimedRewards}`,
+          {
+            method: "GET",
+            mode: "cors",
+          }
+        );
+      }
+      else{
+        console.log("Failed")
+      }
+  }catch(e){
+    console.log("error:", e)
+  }
 
-    console.log(response.value.err);
 
     // if transaction is success then vv
-    if (response.value.err == null) {
-      claimedRewards += amountToClaim;
-      await fetch(
-        //@ts-ignore
-        `https://mint-toastyfriends.club:8888/updateclaimed?wallet_id=${publicKey.toString()}&claimed=${claimedRewards}`,
-        {
-          method: "GET",
-          mode: "cors",
-        }
-      );
-    }
+    
+    setDisabled(false)
   }
 
   async function getHolder() {
+    setGotHolder(true)
+    var count = 0
+    do{
+    count++
     const resp = await fetch(
       //@ts-ignore
       `https://mint-toastyfriends.club:8888/holder/${publicKey.toString()}`,
@@ -124,28 +143,38 @@ const StakeV2Page = () => {
     setClaimedRewards(holderInfo["claimed rewards"]);
     setAmount(holderInfo.amount);
     setStakingStart(holderInfo["staking start"]);
+    } while ( count < 1)
   }
 
-  getHolder();
+  if (gotHolder==false){
+    getHolder();
+    }
+
 
   return (
     <>
-      Started Staking: {stakingStart} UTC
-      <br />
-      <br />
-      NFT's Staked: {amount}
-      <br />
-      <br />
-      Your total rewards: {totalRewards}
-      <br />
-      <br />
-      Claimed already: {claimedRewards}
-      <br />
-      <br />
-      Available to claim: {totalRewards - claimedRewards}
-      <br />
-      <br />
-      <button onClick={claimRewards}>Claim</button>
+      <div className="StakingHeader">
+        <p className="Title">Welcome To Toasty Friends non-custodial staking!</p>
+        <p>(Because what goes better with breakfast than steak)</p>
+      </div>
+      <div className="StartedStaking">
+      Started Staking: <br/> {stakingStart} UTC
+      </div>
+      <div className="AmountStaked">
+      NFT's Staked: <br /> {amount}
+      </div>
+      <div className="StakingRewards">
+      Your total rewards: <br/> {Math.round(totalRewards).toFixed(0)}
+      </div>
+      <div className="RewardsClaimed">
+      Claimed already: <br/> {Math.round(claimedRewards).toFixed(0)}
+      </div>
+      <div className="RewardsToClaim">
+      Available to claim: <br/> {Math.round(totalRewards - claimedRewards).toFixed(0)}
+      </div>
+      <div className="ClaimButton" >
+      <button onClick={claimRewards} disabled={disabled}><p>Claim</p></button>
+      </div>
     </>
   );
 };
