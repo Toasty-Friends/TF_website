@@ -52,10 +52,10 @@ export function ClubhouseAppbar() {
           mode: "cors",
         }
       );
+      setIsLoading(false);
       const holderInfo = await resp.json();
       setStatus(holderInfo.status);
     } while (count < 1);
-    setIsLoading(false);
   }
   if (gotHolder == false) {
     getHolder();
@@ -101,6 +101,8 @@ export function ClubhouseAppbar() {
   };
   return (
     <>
+    {isLoading == false ? (
+        <>
       <button
         onClick={() =>
           signOut({ callbackUrl: "https://toastyfriends.club/Clubhouse" })
@@ -114,57 +116,54 @@ export function ClubhouseAppbar() {
           Sign out
         </p>
       </button>
-      {status == "ACTIVE" ? (
-        <>
-          <div className="ClubhouseAppbar">
-            <button onClick={handleHome}>Home</button>
-            <button onClick={handleStakingV2}>Staking</button>
-            <button onClick={handleStats}>Stats</button>
-            <button onClick={handleTwitter}>Twitter</button>
-            {session.user.email == "josht98@aol.com" ? (
-              <button onClick={handleAdmin}>Admin</button>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="clubhouseComp">
-            {showHome ? (
-              <div className="ClubhouseHomeVerify">
-                <h1>Welcome to the clubhouse!</h1>
-                <p>
-                  This is where the magic happens!
-                  <br />
-                  <br />
-                  Check out our features that have all built in house:
-                  <br />
-                  <br />
-                  <li>Holder Verification</li>
-                  <li>Non-custodial Staking</li>
-                  <li>Stats Checker for any project</li>
-                  <li>Activity Checker for Twitter</li>
-                  <li>More To Be Added...</li>
-                </p>
+          {status == "ACTIVE" ? (
+            <>
+              <div className="ClubhouseAppbar">
+                <button onClick={handleHome}>Home</button>
+                <button onClick={handleStakingV2}>Staking</button>
+                <button onClick={handleStats}>Stats</button>
+                <button onClick={handleTwitter}>Twitter</button>
+                {session.user.email == "josht98@aol.com" ? (
+                  <button onClick={handleAdmin}>Admin</button>
+                ) : (
+                  <></>
+                )}
               </div>
-            ) : showStakingV2 ? (
-              <StakeV2Page />
-            ) : showAdmin ? (
-              <Admin />
-            ) : showStats ? (
-              <Stats />
-            ) : showTwitter ? (
-              <TwitterChecker />
-            ) : (
-              <>ERROR</>
-            )}
-          </div>
-        </>
-      ) : (
-        <>
-          {isLoading == false ? (
+              <div className="clubhouseComp">
+                {showHome ? (
+                  <div className="ClubhouseHomeVerify">
+                    <h1>Welcome to the clubhouse!</h1>
+                    <p>
+                      This is where the magic happens!
+                      <br />
+                      <br />
+                      Check out our features that have all built in house:
+                      <br />
+                      <br />
+                      <li>Holder Verification</li>
+                      <li>Non-custodial Staking</li>
+                      <li>Stats Checker for any project</li>
+                      <li>Activity Checker for Twitter</li>
+                      <li>More To Be Added...</li>
+                    </p>
+                  </div>
+                ) : showStakingV2 ? (
+                  <StakeV2Page />
+                ) : showAdmin ? (
+                  <Admin />
+                ) : showStats ? (
+                  <Stats />
+                ) : showTwitter ? (
+                  <TwitterChecker />
+                ) : (
+                  <>ERROR</>
+                )}
+              </div>
+            </>
+          ) : (
             <>
               <div className="ClubhouseHome">
                 <h1>Welcome to the clubhouse!</h1>
-                {/* set loading screen after button click */}
                 <button className="VerifyButton" onClick={verifyHolder}>
                   Verify
                 </button>
@@ -183,10 +182,10 @@ export function ClubhouseAppbar() {
                 <li>Added Holder Verifications</li>
               </div>
             </>
-          ) : (
-            <></>
           )}
         </>
+      ) : (
+        <></>
       )}
     </>
   );
