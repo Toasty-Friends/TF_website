@@ -185,7 +185,9 @@ export function ClubhouseAppbar() {
           )}
         </>
       ) : (
-        <></>
+        <>
+          LOADING...
+        </>
       )}
     </>
   );
