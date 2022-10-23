@@ -3,7 +3,6 @@ import { useState } from "react";
 import * as SolanaWeb3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 
-
 const StakeV2Page = () => {
   const { connection } = useConnection();
   const { publicKey, signTransaction } = useWallet();
@@ -13,14 +12,15 @@ const StakeV2Page = () => {
   const [amount, setAmount] = useState(Number);
   const [stakingStart, setStakingStart] = useState();
   const [disabled, setDisabled] = useState(false);
-  const [gotHolder, setGotHolder] = useState(false)
-
+  const [gotHolder, setGotHolder] = useState(false);
+  var [isLoading, setLoading] = useState(true);
 
   const tokenMint = new SolanaWeb3.PublicKey(
     "4nxUY1jjtKZR27XcqJCW36kvAZi1iaceBTmgMK1i95gB"
   );
 
   async function claimRewards() {
+    setLoading(true);
     setDisabled(true);
     //call claim api
     const resp = await fetch(
@@ -47,7 +47,7 @@ const StakeV2Page = () => {
     // form transaction from returned amount
 
     const transaction = new SolanaWeb3.Transaction();
-    
+
     //@ts-ignore
     const fromTokenAccount = await splToken.getOrCreateAssociatedTokenAccount(
       connection,
@@ -86,10 +86,10 @@ const StakeV2Page = () => {
     transaction.lastValidBlockHeight = latestBlockHash.lastValidBlockHeight;
 
     transaction.partialSign(auth);
-    
-    try{
+
+    try {
       const signed = await signTransaction(transaction);
-    
+
       const signature = await connection.sendRawTransaction(signed.serialize());
 
       var response = await connection.confirmTransaction({
@@ -110,71 +110,81 @@ const StakeV2Page = () => {
             mode: "cors",
           }
         );
+      } else {
+        console.log("Failed");
       }
-      else{
-        console.log("Failed")
-      }
-  }catch(e){
-    console.log("error:", e)
-  }
-
+    } catch (e) {
+      console.log("error:", e);
+    }
 
     // if transaction is success then vv
-    
-    setDisabled(false)
+    setLoading(false);
+
+    setDisabled(false);
   }
 
   async function getHolder() {
-    setGotHolder(true)
-    var count = 0
-    do{
-    count++
-    const resp = await fetch(
-      //@ts-ignore
-      `https://mint-toastyfriends.club:8888/holder/${publicKey.toString()}`,
-      {
-        method: "GET",
-        mode: "cors",
-      }
-    );
-    const holderInfo = await resp.json();
-    console.log(holderInfo);
-    setTotalRewards(holderInfo["total rewards"]);
-    setClaimedRewards(holderInfo["claimed rewards"]);
-    setAmount(holderInfo.amount);
-    setStakingStart(holderInfo["staking start"]);
-    } while ( count < 1)
+    setGotHolder(true);
+    var count = 0;
+    do {
+      count++;
+      const resp = await fetch(
+        //@ts-ignore
+        `https://mint-toastyfriends.club:8888/holder/${publicKey.toString()}`,
+        {
+          method: "GET",
+          mode: "cors",
+        }
+      );
+      const holderInfo = await resp.json();
+      console.log(holderInfo);
+      setTotalRewards(holderInfo["total rewards"]);
+      setClaimedRewards(holderInfo["claimed rewards"]);
+      setAmount(holderInfo.amount);
+      setStakingStart(holderInfo["staking start"]);
+      setLoading(false);
+    } while (count < 1);
   }
 
-  if (gotHolder==false){
+  if (gotHolder == false) {
     getHolder();
-    }
-
+  }
 
   return (
     <>
-      <div className="StakingHeader">
-        <p className="Title">Welcome To Toasty Friends non-custodial staking!</p>
-        <p>(Because what goes better with breakfast than steak)</p>
-      </div>
-      <div className="StartedStaking">
-      Started Staking: <br/> {stakingStart} UTC
-      </div>
-      <div className="AmountStaked">
-      NFT's Staked: <br /> {amount}
-      </div>
-      <div className="StakingRewards">
-      Your total rewards: <br/> {Math.round(totalRewards).toFixed(0)}
-      </div>
-      <div className="RewardsClaimed">
-      Claimed already: <br/> {Math.round(claimedRewards).toFixed(0)}
-      </div>
-      <div className="RewardsToClaim">
-      Available to claim: <br/> {Math.round(totalRewards - claimedRewards).toFixed(0)}
-      </div>
-      <div className="ClaimButton" >
-      <button onClick={claimRewards} disabled={disabled}><p>Claim</p></button>
-      </div>
+      {isLoading == false ? (
+        <>
+          <div className="StakingHeader">
+            <p className="Title">
+              Welcome To Toasty Friends non-custodial staking!
+            </p>
+            <p>(Because what goes better with breakfast than steak)</p>
+          </div>
+          <div className="StartedStaking">
+            Started Staking: <br /> {stakingStart} UTC
+          </div>
+          <div className="AmountStaked">
+            NFT's Staked: <br /> {amount}
+          </div>
+          <div className="StakingRewards">
+            Your total rewards: <br /> {Math.round(totalRewards).toFixed(0)}
+          </div>
+          <div className="RewardsClaimed">
+            Claimed already: <br /> {Math.round(claimedRewards).toFixed(0)}
+          </div>
+          <div className="RewardsToClaim">
+            Available to claim: <br />{" "}
+            {Math.round(totalRewards - claimedRewards).toFixed(0)}
+          </div>
+          <div className="ClaimButton">
+            <button onClick={claimRewards} disabled={disabled}>
+              <p>Claim</p>
+            </button>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

@@ -8,7 +8,6 @@ import {
   WalletConnectButton,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-import Staking from "Components/Staking";
 
 export default function Clubhouse() {
   const { publicKey } = useWallet();
@@ -22,7 +21,7 @@ export default function Clubhouse() {
       {publicKey && session ? (
         <>
           <ClubhouseAppbar />
-          <Staking />
+          
         </>
       ) : (
         <></>
@@ -37,7 +36,6 @@ export default function Clubhouse() {
       ) : !session ? (
         <>
           <DiscordLogin />
-          <Staking />
         </>
       ) : (
         <></>
